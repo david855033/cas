@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <patient-collection/>
+    <patient-collection />
   </div>
 </template>
 
 <script>
-import PatientCollection from './components/PatientCollection.vue'
+import PatientCollection from "./components/PatientCollection.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     PatientCollection
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -1,15 +1,17 @@
 
 <template>
-  <div class="hello">
+  <div class="main">
     <h1>Clinical Alerting System Prototype</h1>
     <h4>{{ msg }}</h4>
     <input v-model="ward">
     <button @click="subscribe">subscribe</button>
-    <patient
-      v-for="(item, index) in patient_list"
-      :patient="item"
-      :key="index"
-    ></patient>
+    <div class="patients">
+      <patient
+        v-for="(item, index) in patient_list"
+        :patient="item"
+        :key="index"
+      ></patient>
+    </div>
   </div>
 </template>
 
@@ -43,7 +45,7 @@ export default {
     },
     connect: function() {
       let vm = this;
-      ws = new WebSocket("ws://localhost:5000");
+      ws = new WebSocket("ws://192.168.2.109:5000");
       ws.onopen = function() {
         vm.subscribe();
       };
@@ -84,7 +86,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 h3 {
   margin: 40px 0 0;
 }
@@ -99,4 +101,12 @@ li {
 a {
   color: #42b983;
 }
+
+.patients{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 </style>
